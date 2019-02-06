@@ -1,28 +1,21 @@
 let quotes_data = require('./quotes');
 
-
-// let quotes_data = [
-//     { quote: 'I\'m not going to school just for the academics - I wanted to share ideas, to be around people who are passionate about learning.', author: 'Emma Watson' },
-//     { quote: 'Remember there\'s no such thing as a small act of kindness. Every act creates a ripple with no logical end.', author: 'Scott Adams' },
-//     { quote: 'Intelligence plus character-that is the goal of true education.', author: 'Martin Luther King, Jr.' }
-// ];
-
-
-console.log('hello express');
+let PORT = 5000;
 
 let express = require('express');
 
-
 let app = express();
+
+
+
+app.listen(PORT,  () => {
+    console.log('Running on port' ${PORT});
+});
 
 app.use(express.static('server/public'))
 
-app.get('/quotes', function(req, res){
+
+app.get('/quotes', (req, res) => {
     res.send(quotes_data)
 })
-
-
-
-app.listen(5000, function () {
-    console.log('Running on port 5000');
-});
+// res.send(418) I'm a teapot
