@@ -9,7 +9,7 @@ let app = express();
 
 
 app.listen(PORT,  () => {
-    console.log('Running on port' ${PORT});
+    console.log('Running on port', PORT);
 });
 
 app.use(express.static('server/public'))
